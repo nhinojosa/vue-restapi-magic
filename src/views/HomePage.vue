@@ -8,6 +8,7 @@ const { characters, fetchCharacters, firstLoad } = useCharacters()
 onMounted(async () => {
   if (firstLoad.value) {
     await fetchCharacters()
+
     firstLoad.value = false
   }
 })
@@ -21,7 +22,7 @@ onMounted(async () => {
   >
     🚀
   </button>
-  <main class="min-h-screen bg-gradient-to-r from-fuchsia-900 to-red-700">
+  <main class="min-h-screen bg-gradient-to-r from-green-900 to-blue-700">
     <div class="container mx-auto grid grid-cols-8 gap-4 py-8">
       <BaseCard
         v-for="character in characters"

@@ -5,7 +5,7 @@ const props = defineProps({
   character: {
     type: Object,
     default: () => ({
-      _id: -1,
+      multiverseid: -1,
       name: 'Unknown',
       imageUrl: 'https://via.placeholder.com/150',
     }),
@@ -15,7 +15,8 @@ const props = defineProps({
 
 <template>
   <RouterLink
-    :to="`/character/${props.character._id}`"
+    v-if="props.character.multiverseid"
+    :to="`/cards/${props.character.multiverseid}`"
     class="rounded-lg bg-white shadow-lg"
   >
     <img
